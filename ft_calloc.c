@@ -6,30 +6,21 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:01:59 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/21 17:09:25 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 17:26:02 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
 	char	*ptr;
-	size_t	i;
 
-	if (count == 0 || size == 0)
-		return (NULL);
-	if (count * size > 4294967295)
+	ptr = malloc(count * size);
+	if (!ptr)
 	{
 		errno = ENOMEM;
 		return (NULL);
 	}
-	ptr = malloc(count * size);
-	i = 0;
-	while (i < count)
-	{
-		ptr[i] = 0;
-		i++;
-	}
-	return ((void *)ptr);
+	ft_memset(ptr, 0, (size * count));
+	return (ptr);
 }

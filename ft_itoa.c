@@ -6,18 +6,19 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:36:44 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/22 17:11:13 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:04:17 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_nblen(int n)
 {
 	int	count;
 
 	count = 0;
+	if (n < 0)
+		count++;
 	while (n > 9)
 	{
 		n /= 10;

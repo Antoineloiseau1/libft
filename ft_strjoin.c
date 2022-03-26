@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:19:42 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/21 17:20:24 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 17:30:36 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*join;
 	int		size;
-	int 	i;
+	int		i;
 	int		j;
 
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;

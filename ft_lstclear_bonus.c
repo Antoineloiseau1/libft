@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 19:04:16 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/25 19:12:18 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 15:55:09 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tmp;
-	while (tmp)
+	if (!lst)
+		return ;
+	while (*lst && (*lst)->next)
 	{
-		tmp = *lst->next;
-		del(lst->content);
-		free(lst);
-		*lst = tmp;
+		del((*lst)->content);
+		lst = &(*lst)->next;
 	}
+	lst = NULL;
+	free(lst);
 }

@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 17:21:52 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/26 19:15:19 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:52:23 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,46 @@ static	int	ft_checkset(char c, const char *set)
 	return (0);
 }
 
+static	int	ft_alloc(const char *s1, const char *set)
+{
+	int		size;
+	size_t	i;
+	size_t	end;
+
+	size = 0;
+	i = 0;
+	end = ft_strlen(s1);
+	while (ft_checkset(s1[i], set) && s1[i])
+		i++;
+	while (ft_checkset(s1[end], set) && end != -1)
+		end--;
+	size = end - i;
+	return (size);
+}
 
 char	*ft_strtrim(const char *s1, const char *set)
 {
-	size_t	start;
+	char	*trim;
+	size_t	i;
+	int		j;
 	size_t	end;
 
-	start = 0;
+	trim = malloc((ft_alloc(s1, set) + 1) * sizeof(*trim));
+	if (trim == NULL)
+		return (NULL);
+	i = 0;
 	end = ft_strlen(s1);
-	while (ft_checkset(s1[start], set) && s1[start])
-		start++;
-	while (ft_checkset(s1[end], set) && end > 1)
+	while (ft_checkset(s1[i], set) && s1[i])
+		i++;
+	j = 0;
+	while (ft_checkset(s1[end], set) && end > 0)
 		end--;
-	return (ft_substr(s1, start, end - start));
+	while (i != end)
+	{
+		trim[j] = s1[i];
+		i++;
+		j++;
+	}
+	trim[j] = 0;
+	return (trim);
 }

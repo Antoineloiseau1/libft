@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:25:04 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/22 17:55:32 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 17:55:13 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = f(i, s[i]);
 		i++;
 	}
+	str[i] = 0;
 	return (str);
 }

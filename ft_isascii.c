@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 09:32:54 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/21 14:56:44 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/03/26 16:04:32 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isascii(int c)
 {
 	if (c >= 1 && c <= 127)
 		return (c);
-	else if	(c == 0)
+	else if (c == 0)
 		return (-1);
 	else
 		return (0);
