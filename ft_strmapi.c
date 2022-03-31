@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+// Apply f function to each char of s, malloc and return a new string
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;

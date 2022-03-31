@@ -14,17 +14,30 @@
 #include <stdio.h>
 #include <string.h>
 
+void	ft_putstr(char *str)
+{
+	for(int i = 0; str[i]; i++)
+		write(1, &str[i], 1);
+}
+
 int main(int argc, char **argv)
 {
 	(void)argc;
 	(void)argv;
 	//char c = 'a';
-	char str[30] = "aaabcabcd";
-	//char *str2 = "coucou le nerd";
-	int	n = -1243456;
 
-	printf("%d\n", n);
-	printf("%s\n", ft_itoa(n));
+	char str[30] = "aaabcabcda\n";
+//	char *str2 = "cda";
+	t_list **begin;
+	t_list *first = ft_lstnew(str);
+	begin = &first;
+
+	printf("%p\n", begin);
+//	int	n = -1243456;
+
+	//printf("%s\n", ft_strtrim(str, str2));
+	//printf("%d\n", n);
+	//printf("%s\n", ft_itoa(n));
 	
 	//printf("%s\n", ft_strnstr(str, "cd", 8)); 	//STRNSTR
 
@@ -52,5 +65,7 @@ int main(int argc, char **argv)
 	
 	//printf("%s\n", ft_strchr(argv[1], c));		//STRCHR
 	//printf("%s\n", ft_strrchr(argv[1], c));		//STRRCHR
+	free(begin);
+	free(first);
 	return (0);
 }
