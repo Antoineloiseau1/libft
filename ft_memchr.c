@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:55:18 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/22 12:44:33 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:57:08 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	check;
-	const char		*str;
+	size_t					i;
+	unsigned char			check;
+	unsigned const char		*str;
 
 	i = 0;
 	check = c;

@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 14:58:51 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/26 17:28:46 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:06:37 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t		i;
-	char		*tmp_dst;
-	const char	*tmp_src;
+	size_t				i;
+	unsigned char		*tmp_dst;
+	unsigned const char	*tmp_src;
 
+	if (!src && !dst)
+		return (NULL);
 	i = 0;
 	tmp_src = src;
 	tmp_dst = dst;

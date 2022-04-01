@@ -6,19 +6,22 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 16:36:44 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/26 18:04:17 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:00:01 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nblen(int n)
+static int	ft_nblen(long int n)
 {
 	int	count;
 
 	count = 0;
 	if (n < 0)
+	{
+		n *= -1;
 		count++;
+	}
 	while (n > 9)
 	{
 		n /= 10;
@@ -56,7 +59,7 @@ char	*ft_itoa(int n)
 	long int	nb;
 
 	nb = n;
-	str = malloc((ft_nblen(n) + 1) * sizeof(*str));
+	str = (char *)malloc((ft_nblen(nb) + 1) * sizeof(*str));
 	if (str == NULL)
 		return (NULL);
 	i = 0;

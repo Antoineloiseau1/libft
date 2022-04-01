@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: anloisea <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/04/01 17:42:34 by anloisea          #+#    #+#              #
+#    Updated: 2022/04/01 17:43:49 by anloisea         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME 	= libft.a
 
 SRCS 	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c \
@@ -40,3 +52,5 @@ fclean:		clean
 	rm -f ${NAME}
 
 re:	flcean all
+
+.PHONY: re all clean fclean

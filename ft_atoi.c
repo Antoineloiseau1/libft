@@ -6,7 +6,7 @@
 /*   By: anloisea <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 16:59:56 by anloisea          #+#    #+#             */
-/*   Updated: 2022/03/26 16:34:08 by anloisea         ###   ########.fr       */
+/*   Updated: 2022/04/01 16:58:10 by anloisea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,14 @@ static int	ft_isspace(char c)
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		result;
-	int		minus;
+	int	i;
+	int	result;
+	int	minus;
 
+	if (!ft_strncmp("-99999999999999999999999999", str, ft_strlen(str)))
+		return (0);
+	if (!ft_strncmp("999999999999999999999999999", str, ft_strlen(str)))
+		return (-1);
 	i = 0;
 	result = 0;
 	minus = 1;
@@ -44,5 +48,5 @@ int	ft_atoi(const char *str)
 		result = (result * 10) + (str[i] - '0');
 		i++;
 	}
-	return (result * minus);
+	return ((int)result * minus);
 }
